@@ -1,0 +1,15 @@
+{
+  "name": "vue-csrf",
+  "version": "1.0.0",
+  "description": "A Vue.js plugin for getting CSRF-token",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "csrf"
+  ],
+  "author": "Mikita Amialkovich",
+  "license": "MIT"
+}
