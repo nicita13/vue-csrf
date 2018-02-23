@@ -2,14 +2,18 @@
   "name": "vue-csrf",
   "version": "1.0.0",
   "description": "A Vue.js plugin for getting CSRF-token",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx babel src/index.js -o dist/index.js"
   },
   "keywords": [
     "vue",
     "csrf"
   ],
   "author": "Mikita Amialkovich",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
 }
