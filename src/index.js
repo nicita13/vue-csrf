@@ -1,23 +1,5 @@
-class CsrfReader {
-  constructor(selector, attribute) {
-    this.attribute = attribute;
-    this.selector = selector;
-  }
-
-  getToken() {
-    let element = this._getCsrfElement();
-
-    if (element) {
-      return element.getAttribute(this.attribute);
-    }
-
-    return null;
-  }
-
-  _getCsrfElement() {
-    return document.querySelector(this.selector);
-  }
-}
+const CsrfReader = require('./CsrfReader');
+const Csrf = require('./Csrf');
 
 export default {
   install(Vue, options = {
@@ -25,9 +7,12 @@ export default {
     selector: 'meta[name="csrf-token"]',
   }) {
     let csrfReader = new CsrfReader(options.selector, options.attribute);
-    let token = csrfReader.getToken();
+    let csrf = new Csrf(csrfReader.getToken());
 
-    Vue.prototype.$csrfToken = token;
-    Vue.csrfToken = token;
+    Vue.prototype.$csrf = csrf;
+    Vue.csrf = csrf;
+
+    Object.defineProperty(Vue.prototype, '$csrfToken', {get: () => csrf.get()});
+    Object.defineProperty(Vue, 'csrfToken', {get: () => csrf.get()});
   },
 };
