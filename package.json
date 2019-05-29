@@ -1,6 +1,5 @@
 {
   "name": "vue-csrf",
-  "version": "1.0.0",
   "description": "A Vue.js plugin for getting CSRF-token",
   "main": "dist/index.js",
   "scripts": {
