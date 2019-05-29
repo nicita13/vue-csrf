@@ -37,7 +37,18 @@ Vue.use(VueCsrf, {
 then you can get csrf-token by next commands
 
 ```javascript
-
 this.$csrfToken;
 Vue.csrfToken;
+
+this.$csrf.get();
+Vue.csrf.get();
+```
+
+#### Resetting value
+
+Also you can set new value by
+
+```javascript
+this.$csrf.set('new_csrf');
+Vue.csrf.set('new_csrf');
 ```
