@@ -1,6 +1,6 @@
 {
   "name": "vue-csrf",
-  "version": "2.0.4",
+  "version": "3.0.0",
   "description": "A Vue.js plugin for getting CSRF-token",
   "main": "dist/index.js",
   "scripts": {
@@ -15,6 +15,7 @@
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5"
+    "@babel/preset-env": "^7.4.5",
+    "babel-preset-minify": "^0.5.1"
   }
 }
