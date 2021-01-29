@@ -9,7 +9,7 @@ export default {
     let csrfReader = new CsrfReader(options.selector, options.attribute);
     let csrf = new Csrf(csrfReader.getToken());
 
-    app.config.globalProperties.prototype.$csrf = csrf;
+    app.config.globalProperties.$csrf = csrf;
 
     Object.defineProperty(app.config.globalProperties, '$csrfToken', {get: () => csrf.get()});
   },
